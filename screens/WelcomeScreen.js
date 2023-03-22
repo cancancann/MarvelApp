@@ -21,6 +21,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#ed1d24',
     alignItems: 'center',
     justifyContent: 'center',
+    
   },
   logoContainer: {
     alignItems: 'center',
