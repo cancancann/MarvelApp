@@ -1,11 +1,11 @@
-import { View, Text, StyleSheet } from "react-native";
+import {Text, StyleSheet } from "react-native";
 import React from "react";
 import { TouchableOpacity } from "react-native";
 import { COLORS } from "../constant/theme";
 
-const RedButton = ({ title, ...props }) => {
+const RedButton = ({ title,navigation ,...props }) => {
   return (
-    <TouchableOpacity
+    <TouchableOpacity onPress={navigation}
       activeOpacity={0.5}
       style={{
         width: 300,
@@ -20,9 +20,9 @@ const RedButton = ({ title, ...props }) => {
   );
 };
 
-const Blackbutton = ({ title, ...props }) => {
+const Blackbutton = ({ title,navigation , ...props }) => {
   return (
-    <TouchableOpacity
+    <TouchableOpacity onPress={navigation}
       activeOpacity={0.5}
       style={{
         width: 300,

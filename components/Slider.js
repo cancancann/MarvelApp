@@ -2,8 +2,19 @@ import { View, Text, StyleSheet, Image } from "react-native";
 import React from "react";
 import { COLORS } from "../constant/theme";
 import { Blackbutton, RedButton } from "./Button";
+import { useNavigation } from "@react-navigation/native";
 
 const Slider = () => {
+  const navigation= useNavigation();
+
+  const handleSignup = ()=>{
+    return navigation.navigate("Signup")
+  }
+  const handleLogin = ()=>{
+    return navigation.navigate("Login")
+  }
+
+
   return (
     <View style={styles.container}>
       <Image
@@ -16,10 +27,10 @@ const Slider = () => {
       </View>
 
       <View style={{ position: "absolute",top:495}}>
-        <RedButton title="SignUp" backgroundColor={COLORS.secondary} />
+        <RedButton title="SignUp" backgroundColor={COLORS.secondary} navigation={handleSignup} />
       </View>
       <View style={{position:"absolute",top:577}}>
-        <Blackbutton title="Login" backgroundColor={COLORS.black}  />
+        <Blackbutton title="Login" backgroundColor={COLORS.black} navigation={handleLogin} />
       </View>
     </View>
   );

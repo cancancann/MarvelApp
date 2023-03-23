@@ -1,13 +1,16 @@
 import React from 'react';
-import { View,Image, StyleSheet } from 'react-native';
+import { View,Image, StyleSheet, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+
 
 const WelcomeScreen = () => {
+  const navigation = useNavigation();
   return (
-    <View style={styles.container}>
+    <TouchableOpacity onPress={()=>navigation.navigate("Slide")} activeOpacity={1} style={styles.container}>
       <View style={styles.logoContainer}>
         <Image resizeMode='contain' style={styles.logo} source={require('../assets/Marvel-Logo.png')} />
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
