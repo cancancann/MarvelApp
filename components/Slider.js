@@ -42,7 +42,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  SliderImage: {},
   text: {
     color: COLORS.white,
   },
