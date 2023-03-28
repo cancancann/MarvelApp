@@ -1,13 +1,31 @@
 import { StyleSheet, Text, View } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import CharCard from "../components/CharCard";
-import { characters } from "../constant/dataChar";
 import { COLORS } from "../constant/theme";
+import { characters } from "../constant/dataChar";
 import { FlatList } from "react-native";
+import HomeHeader from "../components/HomeHeader";
 
 //bottom tab kullanılması gerek denememiz laazım
 
 const HomeScreen = () => {
+  const [char, setChar] = useState(characters);
+
+  const handleSearch = (value) => {
+    if (!value.length) return setChar(characters);
+
+    const filteredCard = characters.filter((item) => {
+      item.name.toLowerCase().includes(value.toLowerCase());
+    });
+
+    if (filteredCard.length) {
+      setChar(filteredCard);
+    } else {
+      setChar(char);
+    }
+    console.log(filteredCard);
+  };
+
   const renderCard = ({ item }) => {
     return (
       <CharCard
@@ -23,9 +41,12 @@ const HomeScreen = () => {
   return (
     <View style={styles.container}>
       <FlatList
-        data={characters}
+        ListHeaderComponent={
+          <HomeHeader title="Characters and Movies" onSearch={handleSearch} />
+        }
+        data={char}
         renderItem={renderCard}
-        keyExtractor={(item) => item.name}
+        keyExtractor={(item) => item.title}
       />
     </View>
   );
