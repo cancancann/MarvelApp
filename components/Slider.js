@@ -5,15 +5,14 @@ import { Blackbutton, RedButton } from "./Button";
 import { useNavigation } from "@react-navigation/native";
 
 const Slider = () => {
-  const navigation= useNavigation();
+  const navigation = useNavigation();
 
-  const handleSignup = ()=>{
-    return navigation.navigate("Signup")
-  }
-  const handleLogin = ()=>{
-    return navigation.navigate("Login")
-  }
-
+  const handleSignup = () => {
+    return navigation.navigate("Signup");
+  };
+  const handleLogin = () => {
+    return navigation.navigate("Login");
+  };
 
   return (
     <View style={styles.container}>
@@ -26,11 +25,19 @@ const Slider = () => {
         <Image source={require("../assets/Marvel-Logo.png")} />
       </View>
 
-      <View style={{ position: "absolute",top:495}}>
-        <RedButton title="SignUp" backgroundColor={COLORS.secondary} navigation={handleSignup} />
+      <View style={{ position: "absolute", top: 495 }}>
+        <RedButton
+          title="SignUp"
+          backgroundColor={COLORS.secondary}
+          navigation={handleSignup}
+        />
       </View>
-      <View style={{position:"absolute",top:577}}>
-        <Blackbutton title="Login" backgroundColor={COLORS.black} navigation={handleLogin} />
+      <View style={{ position: "absolute", top: 577 }}>
+        <Blackbutton
+          title="Login"
+          backgroundColor={COLORS.black}
+          navigation={handleLogin}
+        />
       </View>
     </View>
   );

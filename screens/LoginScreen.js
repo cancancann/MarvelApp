@@ -8,13 +8,13 @@ import { useNavigation } from "@react-navigation/native";
 const LoginScreen = () => {
   const navigation = useNavigation();
 
-  const goSignup = ()=>{
-    navigation.navigate("Signup")
-  }
-  
+  const goSignup = () => {
+    navigation.navigate("Signup");
+  };
+
   const goHome = () => {
-    navigation.navigate("Home")
-  }
+    navigation.navigate("Home");
+  };
 
   return (
     <View style={styles.container}>
@@ -26,7 +26,11 @@ const LoginScreen = () => {
         />
       </View>
       <Form title="SignUp" goTo={goSignup}>
-        <Blackbutton navigation={goHome} title="Login" backgroundColor={COLORS.black} />
+        <Blackbutton
+          navigation={goHome}
+          title="Login"
+          backgroundColor={COLORS.black}
+        />
       </Form>
     </View>
   );

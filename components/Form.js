@@ -4,7 +4,7 @@ import { RedButton } from "./Button";
 import { COLORS } from "../constant/theme";
 import { TouchableOpacity } from "react-native";
 
-const Form = ({ children, goTo,title }) => {
+const Form = ({ children, goTo, title }) => {
   return (
     <View style={styles.container}>
       <View style={styles.content}>
@@ -30,7 +30,9 @@ const Form = ({ children, goTo,title }) => {
         <Text style={styles.text}>Already have an account?</Text>
 
         <TouchableOpacity activeOpacity={0.7} onPress={goTo}>
-          <Text style={[styles.text, { color: COLORS.secondary }]}>{title}</Text>
+          <Text style={[styles.text, { color: COLORS.secondary }]}>
+            {title}
+          </Text>
         </TouchableOpacity>
       </View>
     </View>

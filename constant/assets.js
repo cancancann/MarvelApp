@@ -5,8 +5,6 @@ import slider4 from "../assets/images/slider4.png";
 import slider5 from "../assets/images/slider5.png";
 import slider6 from "../assets/images/slider6.png";
 
-import search from "../assets/search.png"
+import search from "../assets/search.png";
 
-
-
-export default { slider1, slider2, slider3, slider4, slider5, slider6,search };
+export default { slider1, slider2, slider3, slider4, slider5, slider6, search };
